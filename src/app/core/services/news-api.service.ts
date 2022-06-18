@@ -11,7 +11,7 @@ export class NewsApiService {
   constructor(private http: HttpClient) { //Editamos esto
   }
 
-  initArticle(){  //Creamos esto
+  initArticles(){  //Creamos esto
     return this.getArticlesBySourceId('bbc-news');
   }
 

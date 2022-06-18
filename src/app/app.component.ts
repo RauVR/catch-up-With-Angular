@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NewsApiService} from "./core/services/news-api.service";
+import {LogoApiService} from "./core/services/logo-api.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'catch-up-with-angular';
+export class AppComponent implements OnInit { //  Agregamos implements por que queremos q haga algo cuando comienza
+  title = 'catch-up'; //Renombramos el titulo a catchup
+  articles: Array<any> = [];
+  sources: Array<any> = [];
+
+  constructor(private newsApi: NewsApiService, private logoApi: LogoApiService ) {
+  }
+
+  ngOnInit(): void { //En export class AppComponent le damos click e implementamos metodos faltantes
+    this.newsApi.initArticles().subscribe((data: any) =>
+      this.articles = (data['articles']));
+    this.newsApi.getSources().subscribe((data: any) => {
+      this.sources = data['sources'];
+      this.sources.map(source => source.urlToLogo = this.logoApi.getUrlToLogo(source));
+    });
+  }
 }

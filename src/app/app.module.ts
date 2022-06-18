@@ -24,14 +24,14 @@ import {MatListModule} from "@angular/material/list";
     HttpClientModule, //   Agregamos esto
 
     //Haciendo referencia a los componentes de Angular Material
-    //que se van a utilizar :
+    //que se van a utilizar : ----
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule  //Listo
+    MatListModule  // --- Listo.
 
   ],
   providers: [NewsApiService,LogoApiService], //Aqui van las clases que vas a hacer servicios que se...
