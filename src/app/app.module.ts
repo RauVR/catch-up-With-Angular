@@ -13,10 +13,18 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MainContentComponent } from './main-content/main-content.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { FooterContentComponent } from './footer-content/footer-content.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent,
+    MainContentComponent,
+    FooterContentComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,9 @@ import {MatListModule} from "@angular/material/list";
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule  // --- Listo.
+    MatListModule,
+    LayoutModule,
+    MatGridListModule  // --- Listo.
 
   ],
   providers: [NewsApiService,LogoApiService], //Aqui van las clases que vas a hacer servicios que se...
