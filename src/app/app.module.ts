@@ -18,6 +18,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FooterContentComponent } from './footer-content/footer-content.component';
+import {MatSliderModule} from "@angular/material/slider";
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FooterContentComponent } from './footer-content/footer-content.componen
     //Haciendo referencia a los componentes de Angular Material
     //que se van a utilizar : ----
     MatButtonModule,
+    MatSliderModule,
     MatMenuModule,
     MatCardModule,
     MatToolbarModule,
